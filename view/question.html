@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>财富传说-答题</title>
+    <script type="text/javascript" src="//s.thsi.cn/js/liejin/common/flexible/flexible_w75b.min.js"></script>
+    <!-- <link rel="stylesheet" type="text/css" href="//s.thsi.cn/cb?css/liejin/common/;init.min.css;css/liejin/project/m/kaihu/src/styles/;common.min.css;selectbank.min.css" /> -->
+    <link rel="stylesheet" type="text/css" href="//s.thsi.cn/cb?css/liejin/common/;init.min.css" />
+    <link rel="stylesheet" type="text/css" href="../src/styles/index.css" />
+</head>
+<body>
+<div v-cloak class="container question of-hidden">
+    <div class="background">
+        <div class="loading" v-show="loadingShow">
+            <div class="circle"></div>
+            <img class="big-ball" src="../src/images/question-big-ball.png">
+            <img class="small-ball" src="../src/images/question-small-ball.png">
+            <img class="avatar" src="../src/images/question-avatar.png">
+            <div class="status">匹配中<span class="dotting"></span></div>
+        </div>
+        <div class="start" v-show="startShow">
+            <div class="ourside">
+                <img src="../src/images/question-avatar.png">
+                <span class="nickname">这个男子这个男子</span>
+            </div>
+            <div class="opponent">
+                <img :src="theirAvatar">
+                <span class="nickname">{{theirNickname}}</span>
+            </div>
+            <div class="vs"></div>
+        </div>
+        <div class="playing" v-show="playingShow">
+            <div>
+                <div class="ourside">
+                    <span class="score">{{myScores}}</span>
+                    <img src="../src/images/question-avatar.png">
+                    <span class="nickname">这个男子</span>
+                </div>
+                <div class="opponent">
+                    <span class="score">{{hisScores}}</span>
+                    <img :src="theirAvatar">
+                    <span class="nickname">{{theirNickname}}</span>
+                </div>
+            </div>
+
+
+
+            <div>
+                <div>
+                    <div class="left-countdown">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="right-countdown">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="center-countdown">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="left-linear-bar">
+                        <div class="yellow-bar"></div>
+                    </div>
+                    <div class="right-linear-bar">
+                        <div class="yellow-bar"></div>
+                    </div>
+                </div>
+
+                <div class="chat" @click="chatBoard()"></div>
+                <div class="char-board" v-show="chatBoardShow">
+                    <div class="g_mr40">厉害厉害</div>
+                    <div class="g_mr40">666</div>
+                    <div>很精彩</div>
+                    <div class="g_mr40 g_mt20">是我输了</div>
+                    <div class="g_mr40 g_mt20">不服不行</div>
+                    <div class="g_mt20">再来一局</div>
+                </div>
+                <div>
+                    <div class="question-list">{{nowQuestion}}</div>
+                    <div class="answer-list" @click="clickMyBtn" data-answer="A" :class="!threeQuestion ? 'two-one' : ''">{{nowOptions.A}}</div>
+                    <div class="answer-list" @click="clickMyBtn" data-answer="B" :class="!threeQuestion ? 'two-two' : ''">{{nowOptions.B}}</div>
+                    <div class="answer-list" @click="clickMyBtn" data-answer="C" v-show="threeQuestion">{{nowOptions.C}}</div>
+                    <div class="pagenumber">
+                        <p>1/5</p>
+                        <p>本次活动由同花顺猎金举办</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="result">
+                <img class="result-img" src="../src/images/question-success.png">
+                <div class="nickname">
+                    <span>初出茅庐</span>
+                    <span>(Lv.1)</span>
+                </div>
+                <div class="star">
+                    <img src="../src/images/question-star-yellow.png">
+                    <img src="../src/images/question-star-gray.png">
+                    <img src="../src/images/question-star-gray.png">
+                </div>
+                <div class="coin">
+                    <img src="../src/images/homepage-coin.png">
+                    <span>+100</span>
+                </div>
+                <div class="option">
+                    <div class="again">风险大</div>
+                    <div class="awards">风险大</div>
+                </div>
+                <div class="share">炫耀一下</div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+
+<script charset="utf-8" src="//s.thsi.cn/cb?js/;ta_https.min.js;encrypt.min.js;js/liejin/common/;phone_put.min.js&171124"></script>
+<script charset="utf-8" src="//s.thsi.cn/cb?js/m/common/;basic.js;user.js;bridge.js;js/liejin/common/m/;user.min.js;stat_v1.js&170608"></script>
+<!-- <script charset="utf-8" src="//s.thsi.cn/cb?js/liejin/common/tools/;statevent.min.js;js/liejin/project/m/kaihu/dist/;selectbank.min.js"></script> -->
+<script charset="utf-8" src="//s.thsi.cn/cb?js/liejin/common/tools/;statevent.min.js"></script>
+<script charset="utf-8" src="../dist/question.js"></script>
+
+</body>
+
+</html>

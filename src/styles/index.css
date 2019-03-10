@@ -1,0 +1,1418 @@
+@charset "utf-8";
+
+[v-cloak] {
+    display: none;
+}
+
+html, body {
+    background-color: #e5e5e5;
+}
+
+/***********************/
+/*首页样式*/
+.homepage .background {
+    position: relative;
+    width: 100%;
+    height: 12.06rem;
+    background: url(../images/homepage.jpg) center center;
+    background-size: 100% 100%;
+}
+
+.homepage .avatar {
+    position: absolute;
+    left: 0.3rem;
+    top: 0.3rem;
+    width: 0.72rem;
+    height: 0.72rem;
+    border-radius: 0.36rem;
+    background: #fff;
+}
+
+.homepage .wealth {
+    position: absolute;
+    left: 1.1rem;
+    top: 0.46rem;
+    text-align: center;
+    padding: 0 0.4rem;
+    height: 0.35rem;
+    border-radius: 0.18rem;
+    background: #ffffff;
+}
+
+.homepage .icon-money {
+    position: absolute;
+    top: 50%;
+    left: 0.06rem;
+    width: 0.25rem;
+    height: 0.25rem;
+    margin-top: -0.12rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.homepage .wealth span {
+    font-size: 0.28rem;
+    color: #c57f0b;
+    font-weight: bolder;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.homepage .icon-add {
+    position: absolute;
+    top: 50%;
+    right: -0.1rem;
+    width: 0.42rem;
+    height: 0.42rem;
+    margin-top: -0.21rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.homepage .bag {
+    position: absolute;
+    top: 1.3rem;
+    left: 0.4rem;
+    width: 0.51rem;
+    height: 0.7rem;
+}
+
+.homepage .cash {
+    position: absolute;
+    top: 4.2rem;
+    right: 0.3rem;
+    width: 1.1rem;
+    height: 0.98rem;
+}
+
+
+.homepage .btn-join {
+    position: absolute;
+    left: 50%;
+    bottom: 1.6rem;
+    margin-left: -2.2rem;
+    width: 4.4rem;
+    height: 1.24rem;
+}
+
+
+.homepage .exange {
+    position: absolute;
+    bottom: 0.7rem;
+    left: 0.5rem;
+    width: 0.95rem;
+    height: 0.97rem;
+}
+
+.homepage .rank {
+    position: absolute;
+    bottom: 0.68rem;
+    right: 0.5rem;
+    width: 0.94rem;
+    height: 0.99rem;
+}
+
+.homepage .rule {
+    position: absolute;
+    left: 50%;
+    bottom: 1rem;
+    width: 1.2rem;
+    font-size: 0.24rem;
+    color: #a57eb1;
+    text-align: center;
+    margin-left: -0.6rem;
+}
+
+/***********************/
+/*问题页面样式*/
+.question .background {
+    position: relative;
+    width: 100%;
+    height: 12.06rem;
+    background: url(../images/question.jpg) center center;
+    background-size: 100% 100%;
+}
+
+.question .loading {
+    /*display: none;*/
+}
+
+.question .loading .circle {
+    position: absolute;
+    top: 3rem;
+    left: 50%;
+    width: 3.53rem;
+    height: 3.53rem;
+    background: url(../images/question-circle.png) center center;
+    background-size: 100% 100%;
+    margin-left: -1.76rem;
+    animation: rotatePositive 2s infinite linear;
+}
+
+
+.question .loading .big-ball {
+    position: absolute;
+    top: 3.5rem;
+    left: 2.3rem;
+    width: 0.32rem;
+    height: 0.32rem;
+    background: url(../images/question-big-ball.png) center center;
+    background-size: 100% 100%;
+    transform-origin: 1.46rem 1.30rem;
+    animation: rotatePositive 2s infinite linear;
+}
+
+.question .loading .small-ball {
+    position: absolute;
+    top: 4.04rem;
+    left: 4.53rem;
+    width: 0.28rem;
+    height: 0.28rem;
+    background: url(../images/question-small-ball.png) center center;
+    background-size: 100% 100%;
+    transform-origin: -0.78rem 0.74rem;
+    animation: rotateNegative 2s infinite linear;
+}
+
+.question .loading .avatar {
+    position: absolute;
+    top: 4.1rem;
+    left: 50%;
+    width: 1.36rem;
+    height: 1.36rem;
+    margin-left: -0.66rem;
+}
+
+.question .loading .status {
+    position: absolute;
+    left: 2.7rem;
+    bottom: 4.5rem;
+    font-size: 0.44rem;
+    text-align: center;
+    color: #ffffff;
+}
+
+.dotting {
+    display: inline-block;
+    min-width: 0.1rem;
+    min-height: 0.1rem;
+    box-shadow: 0.1rem 0 currentColor,
+                0.3rem 0 currentColor,
+                0.5rem 0 currentColor;
+    border-radius: 0.1rem;
+    -webkit-animation: dot 2s infinite step-start both;
+            animation: dot 2s infinite step-start both;
+}
+
+.dotting:before {
+    content: '...';
+}
+
+.dotting::before {
+    content: '';
+}
+
+:root .dotting {
+    margin-right: 2rem;
+}
+
+/*匹配过程中正向旋转*/
+@-webkit-keyframes rotatePositive {
+    from {-webkit-transform: rotate(0deg)}
+    to {-webkit-transform: rotate(360deg)}
+}
+
+@keyframes rotatePositive {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(360deg)}
+}
+
+/*匹配过程中反向旋转*/
+@-webkit-keyframes rotateNegative {
+    from {-webkit-transform: rotate(0deg)}
+    to {-webkit-transform: rotate(-360deg)}
+}
+
+@keyframes rotateNegative {
+    from {transform: rotate(0deg)}
+    to {transform: rotate(-360deg)}
+}
+
+/*匹配过程中点的动画*/
+@-webkit-keyframes dot {
+    25% {box-shadow: none}
+    50% {box-shadow: 0.1rem 0 currentColor}
+    75% {box-shadow: 0.1rem 0 currentColor, 0.3rem 0 currentColor}
+    100% {box-shadow: 0.1rem 0 currentColor, 0.3rem 0 currentColor, 0.5rem 0 currentColor}
+}
+
+@keyframes dot {
+    25% {box-shadow: none}
+    50% {box-shadow: 0.1rem 0 currentColor}
+    75% {box-shadow: 0.1rem 0 currentColor, 0.3rem 0 currentColor}
+    100% {box-shadow: 0.1rem 0 currentColor, 0.3rem 0 currentColor, 0.5rem 0 currentColor}
+}
+
+/*匹配完成后我方和对手的载入*/
+@-webkit-keyframes ourside {
+    0% {left: -3.1rem}
+    50% {left: 0}
+}
+
+@keyframes ourside {
+    0% {left: -3.1rem}
+    50% {left: 0}
+}
+
+@-webkit-keyframes opponent {
+    0% {right: -3.11rem}
+    50% {right: 0}
+}
+@keyframes opponent {
+    0% {right: -3.11rem}
+    50% {right: 0}
+}
+
+/*VS字体的载入*/
+@-webkit-keyframes vs {
+    0% {-webkit-transform: scale(0)}
+    50% {-webkit-transform: scale(1)}
+}
+
+@keyframes vs {
+    0% {transform: scale(0)}
+    50% {transform: scale(1)}
+}
+
+.question .start .ourside {
+    position: absolute;
+    top: 1.76rem;
+    left: 0;
+    width: 3.1rem;
+    height: 1.8rem;
+    background: url(../images/question-ourside.png) center center;
+    background-size: 100% 100%;
+    animation: ourside 1s linear alternate 2 forwards;
+}
+
+.question .start .ourside .nickname {
+    width: 2.4rem;
+    font-size: 0.32rem;
+    color: #ffffff;
+    margin-top: 2.3rem;
+    margin-left: 0.1rem;
+    display: block;
+}
+
+.question .start .ourside img {
+    border-radius: 50%;
+}
+
+.question .start .opponent {
+    position: absolute;
+    bottom: 3.2rem;
+    right: 0;
+    width: 3.11rem;
+    height: 1.8rem;
+    background: url(../images/question-opponent.png) center center;
+    background-size: 100% 100%;
+    animation: opponent 1s linear alternate 2 forwards;
+}
+
+.question .start .opponent .nickname {
+    width: 2.4rem;
+    font-size: 0.32rem;
+    color: #ffffff;
+    margin-top: 2.3rem;
+    margin-left: 0.5rem;
+    display: block;
+}
+
+.question .start .opponent img {
+    border-radius: 50%;
+}
+
+.question .start .vs {
+    position: absolute;
+    top: 4.1rem;
+    left: 2.7rem;
+    width: 2.24rem;
+    height: 2.58rem;
+    background: url(../images/question-vs.png) center center;
+    background-size: 100% 100%;
+    animation: vs 1s linear alternate 2 forwards;
+}
+
+.question .start .ourside img {
+    position: absolute;
+    bottom: -0.4rem;
+    right: 1.1rem;
+    width: 1.36rem;
+    height: 1.36rem;
+}
+
+.question .start .opponent img {
+    position: absolute;
+    bottom: -0.4rem;
+    right: 0.7rem;
+    width: 1.36rem;
+    height: 1.36rem;
+}
+
+
+/*开始答题*/
+.question .playing {
+    /*display: none;*/
+}
+
+.question .playing .ourside {
+    position: absolute;
+    top: 0.7rem;
+    left: 0;
+    width: 2.8rem;
+    height: 1.24rem;
+    background: url(../images/question-ourside.png) center center;
+    background-size: 100% 100%;
+}
+
+.question .playing .ourside .nickname {
+    width: 1.8rem;
+    font-size: 0.26rem;
+    color: #ffffff;
+    margin-top: 1.7rem;
+    margin-left: 0;
+    display: block;
+}
+
+.question .playing .opponent {
+    position: absolute;
+    top: 1.1rem;
+    right: 0;
+    width: 2.8rem;
+    height: 1.24rem;
+    background: url(../images/question-opponent.png) center center;
+    background-size: 100% 100%;
+}
+
+.question .playing .opponent .nickname {
+    width: 1.8rem;
+    font-size: 0.26rem;
+    color: #ffffff;
+    margin-top: 1.7rem;
+    margin-left: 1rem;
+    display: block;
+}
+
+.question .playing .opponent img {
+    border-radius: 50%;
+}
+
+.question .playing .score {
+    position: absolute;
+    font-size: 0.30rem;
+    color: #ffffff;
+}
+
+.question .playing .ourside .score {
+    top: 0.5rem;
+    right: 0.8rem;
+}
+
+.question .playing .opponent .score {
+    top: 0.3rem;
+    left: 0.9rem;
+}
+
+.question .playing .ourside img {
+    position: absolute;
+    bottom: -0.4rem;
+    left: 0.46rem;
+    width: 0.86rem;
+    height: 0.86rem;
+}
+
+.question .playing .opponent img {
+    position: absolute;
+    bottom: -0.4rem;
+    right: 0.46rem;
+    width: 0.86rem;
+    height: 0.86rem;
+}
+
+.playing .right:before {
+    position: absolute;
+    top: 50%;
+    left: 0.54rem;
+    margin-top: 0.17rem;
+    content: '';
+    width: 0.5rem;
+    height: 0.35rem;
+    background: url(../images/question-answer-right.png) center center;
+    background-size: 100% 100%;
+}
+
+.playing .wrong:before {
+    position: absolute;
+    top: 50%;
+    left: 0.54rem;
+    margin-top: -0.17rem;
+    content: '';
+    width: 0.34rem;
+    height: 0.34rem;
+    background: url(../images/question-answer-right.png) center center;
+    background-size: 100% 100%;
+}
+
+.question .playing .left-countdown {
+    position: absolute;
+    top: 0.8rem;
+    left: 50%;
+    margin-left: -0.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #fff;
+    border-radius: 50%;
+    clip: rect(0, 1.2rem, 1.2rem, 0.6rem);
+}
+
+.question .playing .left-countdown .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    margin-top: -0.5rem;
+    margin-left: -0.5rem;
+    background: #ffc65b;
+    clip: rect(0, 1rem, 1rem, 0.5rem);
+    animation: leftcountdown 2s linear infinite;
+}
+
+.question .playing .right-countdown {
+    position: absolute;
+    top: 0.8rem;
+    left: 50%;
+    margin-left: -0.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+    background: #fff;
+    border-radius: 50%;
+    clip: rect(0, 0.6rem, 1.2rem, 0);
+}
+
+.question .playing .right-countdown .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    margin-top: -0.5rem;
+    margin-left: -0.5rem;
+    background: #ffc65b;
+    clip: rect(0, 0.5rem, 1rem, 0);
+    animation: rightcountdown 2s linear infinite;
+}
+
+.question .playing .center-countdown {
+    position: absolute;
+    top: 0.8rem;
+    left: 50%;
+    margin-left: -0.6rem;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+.question .playing .center-countdown .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0.7rem;
+    height: 0.7rem;
+    margin-top: -0.35rem;
+    margin-left: -0.35rem;
+    border-radius: 50%;
+    background: #ffffff;
+}
+
+
+/*倒计时动画*/
+@-webkit-keyframes leftcountdown {
+    0% {-webkit-transform: rotate(0);}
+    50% {-webkit-transform: rotate(-180deg);}
+    100% {-webkit-transform: rotate(-180deg);}
+}
+
+@keyframes leftcountdown {
+    0% {transform: rotate(0);}
+    50% {transform: rotate(-180deg);}
+    100% {transform: rotate(-180deg);}
+}
+
+@-webkit-keyframes rightcountdown {
+    0% {-webkit-transform: rotate(0);}
+    50% {-webkit-transform: rotate(0);}
+    100% {-webkit-transform: rotate(-180deg);}
+}
+
+@keyframes rightcountdown {
+    0% {transform: rotate(0);}
+    50% {transform: rotate(0);}
+    100% {transform: rotate(-180deg);}
+}
+
+/*左右两边答题率渐变条*/
+.left-linear-bar {
+    position: absolute;
+    bottom: 1.8rem;
+    left: 0.4rem;
+    width: 0.32rem;
+    height: 4.55rem;
+    background: -webkit-linear-gradient(top, #471055, #661d7f);
+    background: linear-gradient(to bottom, #471055, #661d7f);
+    border-radius: 0.2rem;
+}
+
+.left-linear-bar .yellow-bar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(top, #ffd636, #ff9a17);
+    background: linear-gradient(to bottom, #ffd636, #ff9a17);
+    border-radius: 0.2rem;
+    /*clip: rect(0.91rem, 0.32rem, 4.55rem, 0);*/
+    animation: linearUp 1s linear forwards;
+}
+
+.right-linear-bar {
+    position: absolute;
+    bottom: 1.8rem;
+    right: 0.4rem;
+    width: 0.32rem;
+    height: 4.55rem;
+    background: -webkit-linear-gradient(top, #ffd636, #ff9a17);
+    background: linear-gradient(to bottom, #ffd636, #ff9a17);
+    border-radius: 0.2rem;
+}
+
+.right-linear-bar .yellow-bar {
+    width: 100%;
+    height: 100%;
+    background: -webkit-linear-gradient(top, #ffd636, #ff9a17);
+    background: linear-gradient(to bottom, #ffd636, #ff9a17);
+    border-radius: 0.2rem;
+}
+
+@-webkit-keyframes linearUp {
+    0% {clip: rect(4.55rem, 0.32rem, 4.55rem, 0);}
+    100% {clip: rect(3.64rem, 0.32rem, 4.55rem, 0);}
+}
+
+@keyframes linearUp {
+    0% {clip: rect(4.55rem, 0.32rem, 4.55rem, 0);}
+    100% {clip: rect(3.64rem, 0.32rem, 4.55rem, 0);}
+}
+
+
+/*答题选项部分*/
+.question-list {
+    position: absolute;
+    top: 3.7rem;
+    left: 50%;
+    width: 6.2rem;
+    font-size: 0.44rem;
+    text-align: center;
+    color: #fff;
+    margin-left: -3.1rem;
+}
+
+.two-one {
+    bottom: 4.4rem !important;
+}
+
+.two-two {
+    bottom: 2.44rem !important;
+}
+
+.answer-list {
+    position: absolute;
+    left: 50%;
+    margin-left: -2.6rem;
+    width: 5.21rem;
+    height: 1.14rem;
+    line-height: 1.14rem;
+    font-size: 0.36rem;
+    text-align: center;
+    color: #681b7d;
+    background: url(../images/question-answer-white.png) center center;
+    background-size: 100% 100%;
+}
+
+.answer-list:nth-child(2) {
+    bottom: 5rem;
+}
+
+.option-right {
+    color: #ffffff;
+    background: url(../images/question-answer-purple.png) center center;
+    background-size: 100% 100%;
+}
+
+.option-wrong {
+    color: #ffffff;
+    background: url(../images/question-answer-yellow.png) center center;
+    background-size: 100% 100%;
+}
+
+.answer-list:nth-child(3) {
+    bottom: 3.44rem;
+}
+
+.answer-list:nth-child(4) {
+    bottom: 1.8rem;
+}
+
+/*聊天部分样式*/
+.chat {
+    position: absolute;
+    left: 0.56rem;
+    bottom: 0.6rem;
+    width: 0.64rem;
+    height: 0.61rem;
+    background: url(../images/question-chat.png) center center;
+    background-size: 100% 100%;
+    z-index: 11;
+}
+
+.char-board {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 3.5rem;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 0.2rem 0 0.6rem 0.56rem;
+    z-index: 10;
+}
+
+.char-board > div {
+    width: 1.81rem;
+    height: 0.72rem;
+    line-height: 0.72rem;
+    font-size: 0.3rem;
+    font-weight: bolder;
+    color: #785083;
+    text-align: center;
+    background: #e8d4ee;
+    border-radius: 0.1rem;
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+    float: left;
+}
+
+.pagenumber {
+    position: absolute;
+    left: 50%;
+    bottom: 0.6rem;
+    font-size: 0.24rem;
+    text-align: center;
+    color: #816e94;
+    -webkit-transform: translate(-50%, 0);
+            transform: translate(-50%, 0);
+}
+
+/*答题结果*/
+.result {
+    display: none;
+    position: absolute;
+    bottom: 1.8rem;
+    left: 50%;
+    margin-left: -3rem;
+    width: 6rem;
+    height: 6.12rem;
+    border-radius: 0.2rem;
+    background: #ffffff;
+}
+
+.result-img {
+    width: 2.52rem;
+    height: 2.12rem;
+    margin: -1.4rem auto 0;
+}
+
+.result .nickname {
+    font-size: 0.32rem;
+    color: #ffc65b;
+    text-align: center;
+    margin-top: 0.2rem;
+    margin-bottom: 0.1rem;
+}
+
+.result .star {
+    text-align: center;
+}
+
+.result .star img {
+    width: 0.39rem;
+    height: 0.37rem;
+    display: inline-block;
+}
+
+.result .coin {
+    text-align: center;
+}
+
+.result .coin img {
+    width: 0.4rem;
+    height: 0.4rem;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.result .coin span {
+    font-size: 0.36rem;
+    color: #f9ab10;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+.result .option > div {
+    width: 5.21rem;
+    height: 1.14rem;
+    line-height: 1.14rem;
+    font-size: 0.36rem;
+    text-align: center;
+    margin: 0.3rem auto 0;
+    color: #ffffff;
+}
+
+.result .again {
+    background: url(../images/question-answer-purple.png) center center;
+    background-size: 100% 100%;
+}
+
+.result .awards {
+    background: url(../images/question-answer-yellow.png) center center;
+    background-size: 100% 100%;
+}
+
+.result .share {
+    font-size: 0.24rem;
+    color: #999999;
+    margin-top: 0.2rem;
+    text-align: center;
+}
+
+/***********************/
+/*红包页面样式*/
+.awards .background {
+    position: relative;
+    width: 100%;
+    height: 12.06rem;
+    background: url(../images/question.jpg) center center;
+    background-size: 100% 100%;
+}
+
+/*红包部分*/
+.awards .bag {
+    width: 2.69rem;
+    height: 1.76rem;
+    background: url(../images/awards-bag.png) center center;
+    background-size: 100% 100%;
+    margin: 0.1rem auto 0.2rem;
+}
+
+.bag > div {
+    padding-right: 0.4rem;
+    text-align: center;
+}
+
+.bag > div span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 2rem;
+}
+
+.bag > div span:nth-child(1) {
+    font-size: 0.44rem;
+    font-weight: bolder;
+    color: #f24257;
+}
+
+.bag > div span:nth-child(2) {
+    padding-top: 0.06rem;
+    font-size: 0.28rem;
+    color: #333333;
+}
+
+.awards .continue {
+    width: 5.21rem;
+    height: 1.14rem;
+    line-height: 1.14rem;
+    font-size: 0.36rem;
+    color: #ffffff;
+    background: url(../images/question-answer-purple.png) center center;
+    background-size: 100% 100%;
+    margin: 0.3rem auto;
+}
+
+/*榜单部分*/
+.awards .list {
+    width: 6rem;
+    height: 5.82rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    padding: 0.3rem 0.4rem;
+}
+
+.awards .list > div {
+    margin: 0.2rem auto;
+}
+
+.awards .list > div span:nth-child(1) {
+    font-size: 0.28rem;
+    color: #333333;
+    float: left;
+}
+
+.awards .list > div span:nth-child(2) {
+    font-size: 0.28rem;
+    color: #333333;
+    float: right;
+}
+
+.awards .already {
+    display: none;
+}
+
+.awards .yet img {
+    width: 2.67rem;
+    height: 1.69rem;
+    margin: 1rem auto;
+}
+
+/***********************/
+/*排行榜样式*/
+.rank .background {
+    position: relative;
+    width: 100%;
+    height: 32.06rem;
+    background: url(../images/question.jpg) center top;
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+.rank .mygrade {
+    width: 6rem;
+    height: 1.18rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    margin: 0.2rem auto 0.4rem;
+    padding: 0 0.2rem;
+}
+
+.rank .mygrade > div > div {
+    margin-top: 0.16rem;
+    margin-left: 0.1rem;
+}
+
+.rank .mygrade .avatar {
+    float: left;
+    width: 0.76rem;
+    height: 0.76rem;
+    border-radius: 50%;
+    margin-top: 0.2rem;
+}
+
+.rank .mygrade span {
+    text-align: left;
+}
+
+.rank .mygrade .nickname {
+    font-size: 0.32rem;
+    font-weight: bolder;
+    color: #333333;
+    display: block;
+}
+
+.rank .mygrade .achievement {
+    font-size: 0.24rem;
+    color: #999999;
+    display: block;
+}
+
+.rank .mygrade .totalrank {
+    font-size: 0.24rem;
+    font-weight: bolder;
+    color: #333333;
+    display: block;
+}
+
+.rank .mygrade .totalrate {
+    font-size: 0.24rem;
+    text-align: right;
+    color: #999999;
+    display: block;
+}
+
+.rank .othergrade {
+    width: 6rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    padding: 0 0.2rem;
+}
+
+.rank .othergrade .number {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.rank .othergrade > div {
+    height: 1.18rem;
+}
+
+.rank .othergrade > div:after {
+    content: '';
+    width: 100%;
+    border-bottom: 1px solid #efefef;
+    -webkit-transform: scale(1, 0.5);
+            transform: scale(1, 0.5);
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.rank .othergrade > div:nth-child(1):after {
+    border-bottom: none;
+}
+
+.rank .othergrade .number {
+    float: left;
+    margin-top: 0.3rem;
+}
+
+.rank .othergrade .number img {
+    width: 0.6rem;
+    height: 0.64rem;
+}
+
+.rank .othergrade .number span {
+    display: block;
+    width: 0.6rem;
+    line-height: 0.64rem;
+    height: 0.64rem;
+    font-size: 0.3rem;
+    color: #999999;
+    text-align: center;
+}
+
+.rank .othergrade .avatar {
+    float: left;
+    width: 0.76rem;
+    height: 0.76rem;
+    border-radius: 50%;
+    display: inline-block;
+    vertical-align: middle;
+    margin-top: 0.21rem;
+}
+
+.rank .othergrade span {
+    text-align: left;
+}
+
+.rank .othergrade .nickname {
+    font-size: 0.32rem;
+    font-weight: bolder;
+    color: #333333;
+    display: block;
+}
+
+.rank .othergrade .achievement {
+    font-size: 0.24rem;
+    color: #999999;
+    display: block;
+}
+
+.rank .othergrade > div > div {
+    margin-top: 0.16rem;
+    margin-right: 0.1rem;
+}
+
+
+.rank .othergrade .totalrank {
+    margin-top: 0.48rem;
+    font-size: 0.24rem;
+    color: #999999;
+}
+
+.rank .othergrade .totalrank span:nth-child(2) {
+    margin-right: 0.2rem;
+}
+
+.rank .othergrade .cup {
+    width: 0.2rem;
+    height: 0.2rem;
+    background: url(../images/rank-cup.png) center center;
+    background-size: 100% 100%;
+    vertical-align: middle;
+    display: inline-block;
+}
+
+/***********************/
+/*礼物页面样式*/
+.gift .background {
+    position: relative;
+    width: 100%;
+    background: url(../images/question.jpg) center top;
+    background-size: contain;
+    background-repeat: repeat-y;
+}
+
+.gift .list > div {
+    width: 6rem;
+    height: 1.18rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    padding: 0 0.2rem;
+    margin-bottom: 0.3rem;
+}
+
+.gift .list > div > img {
+    width: 0.63rem;
+    height: 0.77rem;
+    margin-top: 0.2rem;
+    float: left;
+}
+
+.gift .list > div > div {
+    float: left;
+    margin: 0.16rem 0 0 0.2rem;
+}
+
+.gift .list > div > div span {
+    color: #333333;
+    display: block;
+    text-align: left;
+}
+
+.gift .list > div > div span:nth-child(1) {
+    font-weight: bolder;
+    font-size: 0.32rem;
+}
+
+.gift .list > div > div span:nth-child(2) {
+    font-size: 0.24rem;
+}
+
+.gift .btn {
+    float: right !important;
+    width: 1.71rem;
+    height: 0.55rem;
+    line-height: 0.55rem;
+    font-size: 0.28rem;
+    margin-top: 0.32rem !important;
+}
+
+.gift .btn-gray {
+    color: #999999;
+    background: url(../images/gift-gray.png);
+    background-size: 100% 100%;
+}
+
+.gift .btn-purple {
+    color: #ffffff;
+    background: url(../images/question-answer-purple.png);
+    background-size: 100% 100%;
+}
+
+.gift .lock {
+    position: relative;
+}
+
+.gift .lock:after {
+    content: '';
+    width: 6rem;
+    height: 1.18rem;
+    background: url(../images/gift-cover.png);
+    background-size: 100% 100%;
+    position: absolute;
+    left: 0;
+}
+
+
+/***********************/
+/*倒计时页面样式*/
+.time .background {
+    position: relative;
+    width: 100%;
+    height: 12.06rem;
+    background: url(../images/time.jpg) center center;
+    background-size: 100% 100%;
+}
+
+.time .timeboard {
+    position: absolute;
+    top: 4.9rem;
+    left: 50%;
+    margin-left: -3rem;
+    width: 6.0rem;
+    height: 6.25rem;
+    background: #fff;
+    border-radius: 0.2rem;
+}
+
+.time .timeboard .already {
+    width: 4.83rem;
+    height: 1.10rem;
+    border-radius: 0.2rem;
+    background: #ff796f;
+    background: -webkit-linear-gradient(left, #ff8c6e, #ff5c71);
+    background:         linear-gradient(to right, #ff8c6e, #ff5c71);
+    margin-top: -0.4rem;
+}
+
+.time .timeboard .already p {
+    margin-top: 0.14rem;
+}
+
+.time .timeboard .already span {
+    color: #ffda2e;
+}
+
+.time .timeboard > div:nth-child(2) {
+    font-size: 0.46rem;
+    font-weight: bolder;
+    color: #333333;
+    margin-top: 0.4rem;
+}
+
+.time .timecount {
+    font-size: 0.9rem;
+    letter-spacing: 3px;
+    color: #333333;
+}
+
+.time .btn-join {
+    width: 5.21rem;
+    height: 1.14rem;
+    line-height: 1.14rem;
+    font-size: 0.36rem;
+    text-align: center;
+    margin: 0.2rem auto 0;
+    color: #ffffff;
+    background: url(../images/question-answer-purple.png) center center;
+    background-size: 100% 100%;
+}
+
+.time .btn-share {
+    width: 5.21rem;
+    height: 1.14rem;
+    line-height: 1.14rem;
+    font-size: 0.36rem;
+    text-align: center;
+    margin: 0.2rem auto 0;
+    color: #ffffff;
+    background: url(../images/question-answer-yellow.png) center center;
+    background-size: 100% 100%;
+}
+
+/***********************/
+/*规则页面样式*/
+.rule .background {
+    position: relative;
+    width: 100%;
+    background: url(../images/question.jpg) center top;
+    background-size: contain;
+    background-repeat: repeat-y;
+    padding: 0.45rem 0.75rem;
+}
+
+.rule .background p {
+    font-size: 0.24rem;
+    color: #ede4ff;
+    text-align: left;
+    margin-bottom: 0.4rem;
+}
+
+/***********************/
+/*公共样式*/
+p, div, span, img {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.hidden {
+    display: none !important;
+}
+.of-hidden {
+    overflow: hidden;
+}
+
+.f-fl {
+    float: left;
+}
+.f-fr {
+    float: right;
+}
+.f-clearfix{
+    zoom:1;
+}
+.f-clearfix:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    zoom: 1;
+    overflow: hidden;
+}
+
+.f_s0 {
+    font-size: 0;
+}
+.f_ss22 {
+    font-size: .3rem;
+    -webkit-transform: scale(.73, .73);
+    -ms-transform: scale(.73, .73);
+    -o-transform: scale(.73, .73);
+    transform: scale(.73, .73);
+}
+.f_s24 {
+    font-size: .24rem;
+}
+.f_s26 {
+    font-size: .26rem;
+}
+.f_s28 {
+    font-size: .28rem;
+}
+.f_s30 {
+    font-size: .3rem;
+}
+.f_s32 {
+    font-size: .32rem;
+}
+.f_s34 {
+    font-size: .34rem;
+}
+.f_s36 {
+    font-size: .36rem;
+}
+.f_s44 {
+    font-size: .44rem;
+}
+.f_s46 {
+    font-size: .46rem;
+}
+.f_s60 {
+    font-size: .60rem;
+}
+.f_c333 {
+    color: #333333;
+}
+.f_c74537d {
+    color: #74537d;
+}
+.f_c666 {
+    color: #666;
+}
+.f_c999 {
+    color: #999;
+}
+.f_white {
+    color: #fff;
+}
+.f-tl {
+    text-align: left;
+}
+.f-tc {
+    text-align: center;
+}
+.f-tr {
+    text-align: right;
+}
+
+.f_bolder {
+    font-weight: bolder;
+}
+
+.u-relative {
+    position: relative;
+}
+
+.u-block {
+    display: block;
+}
+.u-block_il {
+    display: inline-block;
+}
+
+.g-vc {
+    display: inline-block;
+    vertical-align: middle;
+}
+.g-center {
+    margin-left: auto;
+    margin-right: auto;
+}
+.g-mb10 {
+    margin-bottom: .1rem;
+}
+.g-mb20 {
+    margin-bottom: .2rem;
+}
+.g-mb30 {
+    margin-bottom: .3rem;
+}
+.g-mb40 {
+    margin-bottom: .4rem;
+}
+.g-ml10 {
+    margin-left: .1rem;
+}
+.g-ml40 {
+    margin-left: .4rem;
+}
+.g-mr6 {
+    margin-right: .06rem;
+}
+.g-mr10 {
+    margin-right: .1rem;
+}
+.g-mr20 {
+    margin-right: .2rem;
+}
+.g-mr40 {
+    margin-right: .4rem;
+}
+.g-mt10 {
+    margin-top: .1rem;
+}
+.g-mt20 {
+    margin-top: .2rem;
+}
+.g-mt30 {
+    margin-top: .3rem;
+}
+.g-mt40 {
+    margin-top: .4rem;
+}
+.g-mt50 {
+    margin-top: .5rem;
+}
+.g-mt60 {
+    margin-top: .6rem;
+}
+.g-mt100 {
+    margin-top: 1rem;
+}
+.g-pl10 {
+    padding-left: 0.1rem;
+}
+.g-pl20 {
+    padding-left: 0.2rem;
+}
+.g-pl30 {
+    padding-left: 0.3rem;
+}
