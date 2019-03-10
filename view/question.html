@@ -76,11 +76,12 @@
                 </div>
                 <div>
                     <div class="question-list">{{nowQuestion}}</div>
-                    <div class="answer-list" @click="clickMyBtn" data-answer="A" :class="!threeQuestion ? 'two-one' : ''">{{nowOptions.A}}</div>
-                    <div class="answer-list" @click="clickMyBtn" data-answer="B" :class="!threeQuestion ? 'two-two' : ''">{{nowOptions.B}}</div>
-                    <div class="answer-list" @click="clickMyBtn" data-answer="C" v-show="threeQuestion">{{nowOptions.C}}</div>
+
+                    <div class="answer-list" @click="clickMyBtn" data-answer="A" :class="!isThree ? 'two-one' : ''">{{nowOptions.A}}</div>
+                    <div class="answer-list" @click="clickMyBtn" data-answer="B" :class="!isThree ? 'two-two' : ''">{{nowOptions.B}}</div>
+                    <div class="answer-list" @click="clickMyBtn" data-answer="C" v-show="isThree">{{nowOptions.C}}</div>
                     <div class="pagenumber">
-                        <p>1/5</p>
+                        <p>{{page}}/5</p>
                         <p>本次活动由同花顺猎金举办</p>
                     </div>
                 </div>

@@ -2,6 +2,7 @@
 // var mBasic = require('@ths/mbasic');
 import Vue from 'vue/dist/vue.common.js';
 // var Vue = require('vue');
+var ws;
 var question = new Vue({
     el: '.question',
     data: {
@@ -22,7 +23,10 @@ var question = new Vue({
             C: ''
         },
         nowAnswer: '',
-        threeQuestion: true,
+        isThree: true,
+        isRight: false,
+
+        page: 0,
 
         myScores: 0,
         hisScores: 0,
@@ -38,6 +42,24 @@ var question = new Vue({
         // 聊天版切换
         chatBoard: function() {
             this.chatBoardShow = !this.chatBoardShow;
+        },
+        questionInit: function() {
+            this.nowQuestion = '';
+            this.nowOptions = {
+                A: '',
+                B: '',
+                C: ''
+            };
+            this.nowAnswer = '';
+            this.isThree = true;
+            this.isRight = false;
+            this.chooseMyOption = false;
+            this.chooseHisOption = false;
+            this.chatBoardShow = false;
+            var btnlist = document.querySelectorAll('.answer-list');
+            btnlist.forEach(function(el, index) {
+                el.classList.remove('option-right', 'option-wrong', 'my-right', 'his-right');
+            })
         },
         transformABC: function(para) {
             switch (para) {
@@ -55,30 +77,62 @@ var question = new Vue({
             if (this.chooseMyOption) {
                 return;
             }
-            var answer = e.target.getAttribute('data-answer');
-            e.target.classList.add(this.judgeAnswer(answer));
-            this.chooseMyOption = true;
+            this.chooseMyOption = e.target.getAttribute('data-answer');
+            this.showAnswer(1);
+            // e.target.classList.add(this.judgeAnswer(answer));
+            // this.chooseMyOption = true;
+            // 如果对面已经选过了，则直接公布答案与对错情况
             if (this.chooseHisOption) {
-                document.querySelectorAll('.answer-list')[this.transformABC(this.chooseHisOption)].classList.add(this.judgeAnswer(this.chooseHisOption));
+                this.showAnswer();
+                this.sendMyAnswer();
             }
+        },
+        sendMyAnswer: function() {
+            ws.send(JSON.stringify({
+                "op": "answer",
+                "data": {
+                    "answer": this.chooseMyOption,
+                    "right": 1,
+                    "score": 200
+                }
+            }));
+        },
+        showAnswer: function(me) {
+            var op = me ? this.chooseMyOption : this.chooseHisOption,
+                domlist   = document.querySelectorAll('.answer-list'),
+                index     = this.transformABC(op),
+                isright = this.judgeAnswer(op);
+            if (me) {
+                if (isright) {
+                    this.isRight = true;
+                    domlist[index].classList.add('option-right', 'my-right');
+                } else {
+                    domlist[index].classList.add('option-wrong', 'my-wrong');
+                }
+            } else {
+                if (isright) {
+                    domlist[index].classList.add('option-right', 'his-right');
+                } else {
+                    domlist[index].classList.add('option-wrong', 'his-wrong');
+                }
+            }
+
         },
         judgeAnswer: function(answer) {
             var str = '';
             if (answer == this.nowAnswer) {
-                str = 'option-right, right';
+                return true;
             } else  {
-                str = 'option-wrong, wrong';
+                return false;
             }
-            return str;
         }
     },
     watch: {
 
     },
     mounted: function() {
-        setTimeout(() => {
-            console.log(question);
-            var ws = new WebSocket('ws://api.liejin99.com/wss?userid=465439760');
+        // setTimeout(() => {
+            ws = new WebSocket('ws://api.liejin99.com/wss?userid=465439760');
             ws.onopen = function() {
                 // console.log(ws);
             };
@@ -90,7 +144,6 @@ var question = new Vue({
                     // 双方头像昵称开始即请求题目
                     document.querySelector('.question .start .ourside').addEventListener('webkitAnimationStart', () => {
                         console.log(this.playingShow);
-                        console.log(1);
                         ws.send(JSON.stringify({"op": "question"}));
                     })
                     document.querySelector('.question .start .ourside').addEventListener('webkitAnimationEnd', () => {
@@ -103,20 +156,31 @@ var question = new Vue({
                     this.theirNickname = data.data.nickname;
                 }
                 if (data.status == 'sendQuestion') {
-                    // this.questionList = data.data;
+                    this.page ++;
+                    this.questionInit();
+                    console.log(this.isThree);
                     this.nowQuestion = data.data.question;
                     this.nowOptions = data.data.options;
-                    this.threeQuestion = Object.getOwnPropertyNames(this.nowOptions).length == 4 ? true : false;
-                    console.log(Object.getOwnPropertyNames(this.nowOptions), Object.getOwnPropertyNames(this.nowOptions).length);
+                    this.isThree = Object.getOwnPropertyNames(this.nowOptions).length == 4 ? true : false;
+                    console.log(this.isThree);
                     this.nowAnswer = data.data.answer;
                 }
                 // 对手操作
                 if (data.status == 'matchReply') {
                     this.chooseHisOption = data.data.answer;
-                    this.hisScores = data.data.score;
-                    if (this.chooseMyOption == true) {
-                        document.querySelectorAll('.answer-list')[this.transformABC(this.chooseHisOption)].classList.add(this.judgeAnswer(this.chooseHisOption));
+                    this.hisScores += data.data.score;
+                    console.log(this.chooseMyOption, this.chooseMyOption == true);
+                    if (this.chooseMyOption) {
+                        console.log(222);
+                        this.showAnswer();
+                        this.sendMyAnswer();
                     }
+                }
+                // 答题成功，请求新题目
+                if (data.status == 'answerSuccess') {
+                    setTimeout(function() {
+                        ws.send(JSON.stringify({"op": "question"}));
+                    }, 2000)
                 }
 
             };
@@ -126,7 +190,7 @@ var question = new Vue({
             ws.onclose = function() {
                 console.log('已关闭');
             };
-        }, 1000);
+        // }, 1000);
 
     },
     watch: {

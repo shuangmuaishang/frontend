@@ -439,11 +439,11 @@ html, body {
     height: 0.86rem;
 }
 
-.playing .right:before {
+.playing .my-right:before {
     position: absolute;
     top: 50%;
     left: 0.54rem;
-    margin-top: 0.17rem;
+    margin-top: -0.17rem;
     content: '';
     width: 0.5rem;
     height: 0.35rem;
@@ -451,7 +451,7 @@ html, body {
     background-size: 100% 100%;
 }
 
-.playing .wrong:before {
+.playing .my-wrong:before {
     position: absolute;
     top: 50%;
     left: 0.54rem;
@@ -459,7 +459,31 @@ html, body {
     content: '';
     width: 0.34rem;
     height: 0.34rem;
+    background: url(../images/question-answer-wrong.png) center center;
+    background-size: 100% 100%;
+}
+
+.playing .his-right:after {
+    position: absolute;
+    top: 50%;
+    right: 0.54rem;
+    margin-top: -0.17rem;
+    content: '';
+    width: 0.5rem;
+    height: 0.35rem;
     background: url(../images/question-answer-right.png) center center;
+    background-size: 100% 100%;
+}
+
+.playing .his-wrong:after {
+    position: absolute;
+    top: 50%;
+    right: 0.54rem;
+    margin-top: -0.17rem;
+    content: '';
+    width: 0.34rem;
+    height: 0.34rem;
+    background: url(../images/question-answer-wrong.png) center center;
     background-size: 100% 100%;
 }
 
