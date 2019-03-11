@@ -304,6 +304,54 @@ html, body {
     display: block;
 }
 
+.myqipao {
+    position: absolute;
+    top: 3rem;
+    left: 0.6rem;
+    width: 1.46rem;
+    height: 0.6rem;
+    color: #785083;
+    line-height: 0.6rem;
+    border-radius: 0.1rem;
+    background: #fff;
+}
+
+.myqipao:after {
+    content: '';
+    position:absolute;
+    border-width: 0.1rem;
+    left: .4rem;
+    top: -0.1rem;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+}
+
+.hisqipao {
+    position: absolute;
+    top: 3.4rem;
+    right: 0.7rem;
+    width: 1.46rem;
+    height: 0.6rem;
+    color: #785083;
+    line-height: 0.6rem;
+    border-radius: 0.1rem;
+    background: #fff;
+}
+
+.hisqipao:after {
+    content: '';
+    position:absolute;
+    border-width: 0.1rem;
+    right: 0.2rem;
+    top: -0.1rem;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #fff;
+}
+
+
+
 .question .start .ourside img {
     border-radius: 50%;
 }
@@ -500,6 +548,7 @@ html, body {
 }
 
 .question .playing .left-countdown .circle {
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -510,7 +559,10 @@ html, body {
     margin-left: -0.5rem;
     background: #ffc65b;
     clip: rect(0, 1rem, 1rem, 0.5rem);
-    animation: leftcountdown 2s linear infinite;
+}
+
+.leftcountdown {
+    animation: leftcountdown 10s linear infinite;
 }
 
 .question .playing .right-countdown {
@@ -525,6 +577,10 @@ html, body {
     clip: rect(0, 0.6rem, 1.2rem, 0);
 }
 
+.rightcountdown {
+    animation: rightcountdown 10s linear infinite;
+}
+
 .question .playing .right-countdown .circle {
     position: absolute;
     top: 50%;
@@ -536,7 +592,6 @@ html, body {
     margin-left: -0.5rem;
     background: #ffc65b;
     clip: rect(0, 0.5rem, 1rem, 0);
-    animation: rightcountdown 2s linear infinite;
 }
 
 .question .playing .center-countdown {
@@ -549,6 +604,10 @@ html, body {
 }
 
 .question .playing .center-countdown .circle {
+    padding-top: 0.06rem;
+    font-size: 0.4rem;
+    color: #ffc65b;
+
     position: absolute;
     top: 50%;
     left: 50%;
@@ -600,13 +659,14 @@ html, body {
 
 .left-linear-bar .yellow-bar {
     position: absolute;
+    bottom: 0;
     width: 100%;
-    height: 100%;
+    /*height: 100%;*/
     background: -webkit-linear-gradient(top, #ffd636, #ff9a17);
     background: linear-gradient(to bottom, #ffd636, #ff9a17);
     border-radius: 0.2rem;
     /*clip: rect(0.91rem, 0.32rem, 4.55rem, 0);*/
-    animation: linearUp 1s linear forwards;
+    /*animation: linearUp 1s linear forwards;*/
 }
 
 .right-linear-bar {
@@ -615,14 +675,16 @@ html, body {
     right: 0.4rem;
     width: 0.32rem;
     height: 4.55rem;
-    background: -webkit-linear-gradient(top, #ffd636, #ff9a17);
-    background: linear-gradient(to bottom, #ffd636, #ff9a17);
+    background: -webkit-linear-gradient(top, #471055, #661d7f);
+    background: linear-gradient(to bottom, #471055, #661d7f);
     border-radius: 0.2rem;
 }
 
 .right-linear-bar .yellow-bar {
+    position: absolute;
     width: 100%;
-    height: 100%;
+    bottom: 0;
+    /*height: 100%;*/
     background: -webkit-linear-gradient(top, #ffd636, #ff9a17);
     background: linear-gradient(to bottom, #ffd636, #ff9a17);
     border-radius: 0.2rem;
@@ -642,7 +704,7 @@ html, body {
 /*答题选项部分*/
 .question-list {
     position: absolute;
-    top: 3.7rem;
+    top: 4.1rem;
     left: 50%;
     width: 6.2rem;
     font-size: 0.44rem;
@@ -717,6 +779,19 @@ html, body {
     background: rgba(0, 0, 0, 0.8);
     padding: 0.2rem 0 0.6rem 0.56rem;
     z-index: 10;
+}
+
+.char-board > div:nth-child(1), .char-board > div:nth-child(2) {
+    margin-right: 0.4rem;
+}
+
+.char-board > div:nth-child(4), .char-board > div:nth-child(5) {
+    margin-right: 0.4rem;
+    margin-top: 0.2rem;
+}
+
+.char-board > div:nth-child(6) {
+    margin-top: 0.2rem;
 }
 
 .char-board > div {
@@ -1258,6 +1333,13 @@ html, body {
     margin-bottom: 0.4rem;
 }
 
+
+.pause {
+    animation-play-state: paused !important;
+}
+.play {
+    animation-play-state: running !important;
+}
 /***********************/
 /*公共样式*/
 p, div, span, img {

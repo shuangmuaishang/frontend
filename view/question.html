@@ -43,36 +43,33 @@
                     <span class="nickname">{{theirNickname}}</span>
                 </div>
             </div>
+            <div class="myqipao" v-show="myMessage">{{myMessage}}</div>
+            <div class="hisqipao" v-show="hisMessage">{{hisMessage}}</div>
 
 
 
-            <div>
+            <div v-show="!resultShow">
                 <div>
                     <div class="left-countdown">
-                        <div class="circle"></div>
+                        <div class="circle leftcountdown" ref="an1" v-show="!countStop"></div>
                     </div>
                     <div class="right-countdown">
-                        <div class="circle"></div>
+                        <div class="circle rightcountdown" ref="an2" v-show="!countStop"></div>
                     </div>
                     <div class="center-countdown">
-                        <div class="circle"></div>
+                        <div class="circle">{{Math.floor(time)}}</div>
                     </div>
                     <div class="left-linear-bar">
-                        <div class="yellow-bar"></div>
+                        <div class="yellow-bar" :style="{height: this.myRightnum * 20 + '%'}"></div>
                     </div>
                     <div class="right-linear-bar">
-                        <div class="yellow-bar"></div>
+                        <div class="yellow-bar" :style="{height: this.hisRightnum * 20 + '%'}"></div>
                     </div>
                 </div>
 
                 <div class="chat" @click="chatBoard()"></div>
                 <div class="char-board" v-show="chatBoardShow">
-                    <div class="g_mr40">厉害厉害</div>
-                    <div class="g_mr40">666</div>
-                    <div>很精彩</div>
-                    <div class="g_mr40 g_mt20">是我输了</div>
-                    <div class="g_mr40 g_mt20">不服不行</div>
-                    <div class="g_mt20">再来一局</div>
+                    <div @click="message($event, index)" v-for="(items, index) in messageList">{{items}}</div>
                 </div>
                 <div>
                     <div class="question-list">{{nowQuestion}}</div>
@@ -89,20 +86,19 @@
 
 
 
-            <div class="result">
+            <div class="result" v-show="resultShow">
                 <img class="result-img" src="../src/images/question-success.png">
                 <div class="nickname">
-                    <span>初出茅庐</span>
-                    <span>(Lv.1)</span>
+                    <span>{{renderName}}</span>
+                    <span>(Lv.{{finally.level}})</span>
                 </div>
                 <div class="star">
-                    <img src="../src/images/question-star-yellow.png">
-                    <img src="../src/images/question-star-gray.png">
-                    <img src="../src/images/question-star-gray.png">
+                    <img v-for="finally.star" src="../src/images/question-star-yellow.png">
+                    <img v-for="finally.level - finally.star" src="../src/images/question-star-gray.png">
                 </div>
                 <div class="coin">
                     <img src="../src/images/homepage-coin.png">
-                    <span>+100</span>
+                    <span>+{{finally.coin}}</span>
                 </div>
                 <div class="option">
                     <div class="again">风险大</div>
