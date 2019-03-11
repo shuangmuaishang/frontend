@@ -822,7 +822,7 @@ html, body {
 
 /*答题结果*/
 .result {
-    display: none;
+    /*display: none;*/
     position: absolute;
     bottom: 1.8rem;
     left: 50%;
@@ -837,6 +837,10 @@ html, body {
     width: 2.52rem;
     height: 2.12rem;
     margin: -1.4rem auto 0;
+}
+
+.shorter {
+    height: 1.80rem;
 }
 
 .result .nickname {

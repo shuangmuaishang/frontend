@@ -43,7 +43,7 @@ var question = new Vue({
         myMessage: '',
         hisMessage: '',
 
-        finally: {
+        finallydata: {
             "win": 0,
             "userinfo": {
                 "nickname": "",
@@ -76,6 +76,9 @@ var question = new Vue({
             setTimeout(() => {
                 this.myMessage = '';
             }, 2000);
+        },
+        again: function() {
+            window.location.reload();
         },
         questionInit: function() {
             this.nowQuestion = '';
@@ -279,8 +282,14 @@ var question = new Vue({
                 // 最终结算
                 if (data.status == 'balanceSuccess') {
                     this.resultShow = true;
-                    this.finally = data.data;
-
+                    this.finallydata = data.data;
+                    if (this.finallydata.win == 0) {
+                        this.finallyImg = '../src/images/question-fail.png';
+                    } else if (this.finallydata.win == 1) {
+                        this.finallyImg = '../src/images/question-success.png';
+                    } else if (this.finallydata.win == 2) {
+                        this.finallyImg = '../src/images/question-draw.png';
+                    }
                 }
             };
             ws.onerror = function() {
@@ -294,7 +303,7 @@ var question = new Vue({
     },
     computed: {
         renderName: function() {
-            switch (this.finally.userinfo.level) {
+            switch (this.finallydata.userinfo.level) {
                 case 1:
                     return '初出茅庐';
                 case 2:
@@ -323,7 +332,7 @@ var question = new Vue({
         }
     },
     watch: {
-        finally: {
+        finallydata: {
 
         }
     },

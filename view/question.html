@@ -87,24 +87,24 @@
 
 
             <div class="result" v-show="resultShow">
-                <img class="result-img" src="../src/images/question-success.png">
+                <img class="result-img" :class="{short: finallydata.win == 1}" :src="finallyImg">
                 <div class="nickname">
                     <span>{{renderName}}</span>
-                    <span>(Lv.{{finally.level}})</span>
+                    <span>(Lv.{{finallydata.userinfo.level}})</span>
                 </div>
                 <div class="star">
-                    <img v-for="finally.star" src="../src/images/question-star-yellow.png">
-                    <img v-for="finally.level - finally.star" src="../src/images/question-star-gray.png">
+                    <img v-for="count in finallydata.userinfo.star" src="../src/images/question-star-yellow.png">
+                    <img v-for="count in finallydata.userinfo.level - finallydata.userinfo.star" src="../src/images/question-star-gray.png">
                 </div>
                 <div class="coin">
                     <img src="../src/images/homepage-coin.png">
-                    <span>+{{finally.coin}}</span>
+                    <span>+{{finallydata.userinfo.coin}}</span>
                 </div>
                 <div class="option">
-                    <div class="again">风险大</div>
-                    <div class="awards">风险大</div>
+                    <div class="again" @click="again">再来一局</div>
+                    <div class="awards">{{finallydata.win == 0 ? "答题奖励" : "称号奖励"}}</div>
                 </div>
-                <div class="share">炫耀一下</div>
+                <div class="share">{{finallydata.win == 1 ? "炫耀一下" : "分享活动"}}</div>
             </div>
 
 
