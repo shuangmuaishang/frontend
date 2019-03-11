@@ -29,6 +29,7 @@ html, body {
 }
 
 .homepage .wealth {
+    width: 1.6rem;
     position: absolute;
     left: 1.1rem;
     top: 0.46rem;
@@ -1337,6 +1338,73 @@ html, body {
     margin-bottom: 0.4rem;
 }
 
+/*首页弹窗*/
+.homepage .layer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 5.4rem;
+    /*height: 6.26rem;*/
+    background: #fff;
+    border-radius: 0.2rem;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    margin-left: -2.7rem;
+    padding-bottom: 0.4rem;
+    z-index: 11;
+}
+
+.homepage .layer-cover {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+}
+
+.homepage .tips {
+    width: 2.41rem;
+    height: 0.62rem;
+    line-height: 0.62rem;
+    font-size: 0.28rem;
+    color: #785083;
+    background: #e8d4ee;
+    border-radius: 0.3rem;
+    margin-top: -0.3rem;
+}
+
+.homepage .layer p {
+    width: 79%;
+    font-size: 0.36rem;
+    color: #333333;
+    font-weight: bolder;
+    margin-top: 0.2rem;
+}
+
+.homepage .invite {
+    position: relative;
+    width: 4.6rem;
+    height: 1.10rem;
+    background: url(../images/homepage-invite.png) center center;
+    background-size: 100% 100%;
+    margin-top: 0.4rem;
+}
+
+.homepage .invite > img {
+    position: absolute;
+    top: 50%;
+    right: 0.1rem;
+    margin-top: -0.45rem;
+    width: 0.9rem;
+    height: 0.91rem;
+}
+
+.homepage .login {
+    width: 4.6rem;
+    height: 1.10rem;
+    margin-top: 0.4rem;
+}
 
 .pause {
     animation-play-state: paused !important;
@@ -1344,6 +1412,8 @@ html, body {
 .play {
     animation-play-state: running !important;
 }
+
+
 /***********************/
 /*公共样式*/
 p, div, span, img {
