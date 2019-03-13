@@ -10,51 +10,63 @@
     <link rel="stylesheet" type="text/css" href="../src/styles/index.css" />
 </head>
 <body>
-<div class="container awards">
+<div v-cloak class="container awards">
     <div class="background of-hidden">
         <p class="f_s36 f-tc f_white g-mt60 ">你已累计获得答题红包</p>
         <div class="bag">
             <div>
-                <span>12.5</span>
+                <span>{{money}}</span>
                 <span>元</span>
             </div>
         </div>
         <p class="f_s28 f-tc f_c74537d">满5元即可提现到微信钱包（实时到账）</p>
-        <div class="continue">继续答题</div>
+        <div class="continue" @click="goCash" v-if="money >= 5">发起提现</div>
+        <div class="continue" @click="play" v-else>继续答题</div>
         <div class="list">
             <p class="f_s28 f_c333 f_bolder">- 红包明细 -</p>
-            <div class="already">
-                <div class="f-clearfix">
-                    <span>解锁初出茅庐</span>
-                    <span>0.88元</span>
-                </div>
-                <div class="f-clearfix">
-                    <span>每周瓜分奖励</span>
-                    <span>1.28元</span>
-                </div>
-                <div class="f-clearfix">
-                    <span>解锁初出茅庐</span>
-                    <span>0.88元</span>
-                </div>
-                <div class="f-clearfix">
-                    <span>每周瓜分奖励</span>
-                    <span>1.28元</span>
-                </div>
-            </div>
-            <div class="yet">
-                <img src="../src/images/awards-yet.png">
-                <p class="f_s28 f_c333333">目前你还没有获得任何红包哦<br>解锁称号、参与瓜分均可领红包</p>
-            </div>
 
+            <div class="yet" v-if="record.length == 0">
+                <img  src="../src/images/awards-yet.png">
+                <p class="f_s28 f_c333333" >目前你还没有获得任何红包哦<br>解锁称号、参与瓜分均可领红包</p>
+            </div>
+            <div class="already" v-else>
+                <div class="f-clearfix" v-for="(item,index) in record">
+                    <span>{{renderName(item.award)}}</span>
+                    <span>{{item.amount}}元</span>
+                </div>
+                <!-- <div class="f-clearfix">
+                    <span>解锁初出茅庐</span>
+                    <span>0.88元</span>
+                </div> -->
+            </div>
         </div>
     </div>
+    <div class="layer" v-show="layerShow">
+        <div class="layerCash" v-if="!notEnough">
+            <div class="tips">提现申请</div>
+            <p>您需要在微信公众号<br>
+                <span>「掌上猎金」</span>上发起<br>
+                活动红包提现，奖励实时到账
+            </p>
+            <div class="goWeixin">复制账上猎金并前往微信</div>
+        </div>
+        <div class="layerCoin" v-else>
+            <div class="tips">温馨提示</div>
+            <p>你的金币不够啦，你可以通过以下方式获得金币哦</p>
+            <div class="invite">
+                <img src="../src/images/homepage-add2.png">
+            </div>
+            <img class="login" src="../src/images/homepage-login.png">
+        </div>
+    </div>
+    <div class="layer-cover" @click="layerShow = !layerShow" v-show="layerShow"></div>
 </div>
 
 <script charset="utf-8" src="//s.thsi.cn/cb?js/;ta_https.min.js;encrypt.min.js;js/liejin/common/;phone_put.min.js&171124"></script>
 <script charset="utf-8" src="//s.thsi.cn/cb?js/m/common/;basic.js;user.js;bridge.js;js/liejin/common/m/;user.min.js;stat_v1.js&170608"></script>
 <!-- <script charset="utf-8" src="//s.thsi.cn/cb?js/liejin/common/tools/;statevent.min.js;js/liejin/project/m/kaihu/dist/;selectbank.min.js"></script> -->
 <script charset="utf-8" src="//s.thsi.cn/cb?js/liejin/common/tools/;statevent.min.js"></script>
-<script charset="utf-8" src="../dist/question.js"></script>
+<script charset="utf-8" src="../dist/awards.js"></script>
 
 </body>
 

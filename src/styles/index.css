@@ -986,7 +986,11 @@ html, body {
 }
 
 .awards .already {
-    display: none;
+    /*display: none;*/
+}
+
+.awards .yet {
+    /*display: none;*/
 }
 
 .awards .yet img {
@@ -1285,7 +1289,6 @@ html, body {
 
 .time .timeboard > div:nth-child(2) {
     font-size: 0.46rem;
-    font-weight: bolder;
     color: #333333;
     margin-top: 0.4rem;
 }
@@ -1354,7 +1357,7 @@ html, body {
     z-index: 11;
 }
 
-.homepage .layer-cover {
+.layer-cover {
     position: fixed;
     top: 0;
     width: 100%;
@@ -1404,6 +1407,177 @@ html, body {
     width: 4.6rem;
     height: 1.10rem;
     margin-top: 0.4rem;
+}
+/*提现弹窗*/
+.awards .layer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 5.4rem;
+    height: 4.85rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    margin-left: -2.7rem;
+    padding-bottom: 0.4rem;
+    z-index: 11;
+}
+
+.awards .layer .layerCoin .tips {
+    width: 2.41rem;
+    height: 0.62rem;
+    line-height: 0.62rem;
+    font-size: 0.28rem;
+    color: #785083;
+    background: #e8d4ee;
+    border-radius: 0.3rem;
+    margin-top: -0.3rem;
+}
+
+.awards .layer .layerCoin p {
+    width: 79%;
+    font-size: 0.36rem;
+    color: #333333;
+    font-weight: bolder;
+    margin-top: 0.2rem;
+}
+
+.awards .layer .layerCoin .invite {
+    position: relative;
+    width: 4.6rem;
+    height: 1.10rem;
+    background: url(../images/homepage-invite.png) center center;
+    background-size: 100% 100%;
+    margin-top: 0.4rem;
+}
+
+.awards .layer .layerCoin .invite > img {
+    position: absolute;
+    top: 50%;
+    right: 0.1rem;
+    margin-top: -0.45rem;
+    width: 0.9rem;
+    height: 0.91rem;
+}
+
+.awards .layer .layerCoin .login {
+    width: 4.6rem;
+    height: 1.10rem;
+    margin-top: 0.4rem;
+}
+
+.awards .layer .layerCash .tips {
+    width: 2.41rem;
+    height: 0.62rem;
+    line-height: 0.62rem;
+    font-size: 0.28rem;
+    color: #785083;
+    background: #e8d4ee;
+    border-radius: 0.3rem;
+    margin-top: -0.3rem;
+}
+
+.awards .layer .layerCash p {
+    font-size: 0.36rem;
+    font-weight: bolder;
+    color: #333333;
+    margin-top: 0.8rem;
+}
+
+.awards .layer .layerCash .goWeixin {
+    width: 4.16rem;
+    height: 0.91rem;
+    line-height: 0.91rem;
+    font-size: 0.3rem;
+    color: #fff;
+    background: url(../images/question-answer-purple.png);
+    background-size: 100% 100%;
+    margin-top: 0.7rem;
+}
+/*礼物弹窗*/
+.gift-layer {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 5.4rem;
+    height: 5.65rem;
+    background: #fff;
+    border-radius: 0.2rem;
+    -webkit-transform: translate(0, -50%);
+            transform: translate(0, -50%);
+    margin-left: -2.7rem;
+    padding-bottom: 0.4rem;
+    z-index: 11;
+}
+
+.gift-layer .tips {
+    width: 2.41rem;
+    height: 0.62rem;
+    line-height: 0.62rem;
+    font-size: 0.28rem;
+    color: #785083;
+    background: #e8d4ee;
+    border-radius: 0.3rem;
+    margin-top: -0.3rem;
+}
+
+.gift-layer .congratulate {
+    width: 79%;
+    font-size: 0.36rem;
+    font-weight: bolder;
+    color: #333333;
+    margin-top: 0.2rem;
+}
+
+.gift-layer .bag {
+    position: relative;
+    width: 1.53rem;
+    height: 2.01rem;
+    background: url(../images/gift-award1.png) center center;
+    background-size: 100% 100%;
+    margin-top: 0.2rem;
+    overflow: hidden;
+}
+
+.gift-layer .bag p {
+    font-size: 0.42rem;
+    color: #fff;
+    margin-top: 1.0rem;
+}
+
+.gift-layer .continue {
+    width: 4.16rem;
+    height: 0.91rem;
+    line-height: 0.91rem;
+    font-size: 0.3rem;
+    color: #fff;
+    background: url(../images/question-answer-purple.png);
+    background-size: 100% 100%;
+    margin-top: 0.2rem;
+}
+
+.gift-layer .see {
+    width: 4.16rem;
+    height: 0.91rem;
+    line-height: 0.91rem;
+    font-size: 0.3rem;
+    color: #fff;
+    background: url(../images/question-answer-yellow.png);
+    background-size: 100% 100%;
+    margin-top: 0.2rem;
+}
+
+.gift-layer .gift-sec img {
+    width: 1.92rem;
+    height: 1.87rem;
+    margin-top: 0.1rem;
+}
+
+.gift-layer .gift-thi img {
+    width: 2.58rem;
+    height: 1.89rem;
+    margin-top: 0.2rem;
 }
 
 .pause {
@@ -1528,7 +1702,7 @@ p, div, span, img {
     display: inline-block;
 }
 
-.g-vc {
+.g-vm {
     display: inline-block;
     vertical-align: middle;
 }

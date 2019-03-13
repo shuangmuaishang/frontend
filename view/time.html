@@ -10,7 +10,7 @@
     <link rel="stylesheet" type="text/css" href="../src/styles/index.css" />
 </head>
 <body>
-<div class="container time of-hidden">
+<div v-cloak class="container time of-hidden">
     <div class="background">
         <div class="timeboard">
             <div class="already of-hidden">
@@ -19,12 +19,24 @@
             <div>
                 <p>瓜分倒计时</p>
                 <p class="timecount">
-                    125:56:59
+                    {{hour}}:{{minute}}:{{second}}
                 </p>
-                <div class="btn-join">马上答题</div>
+                <div @click="play"  v-if="timeShow" class="btn-join">马上答题</div>
+                <div @click="getMoney" v-else class="btn-join">马上瓜分</div>
                 <div class="btn-share">分享活动</div>
             </div>
         </div>
+        <div v-show="layerShow" @click="layerShow = false" class="layer-cover"></div>
+        <div v-show="layerShow" class="gift-layer">
+            <div class="tips">奖励中心</div>
+            <p class="congratulate">恭喜你本周共瓜分到现金红包</p>
+            <div class="bag">
+                <p>{{money}}<span class="f_s24 g-vm">元</span></p>
+            </div>
+            <p class="f_s24 f_c999 g-mt20">现金奖励累计满5元，<br>即可发起微信体现，实时到账</p>
+            <div @click="play" class="continue">继续答题</div>
+        </div>
+        <layer-coin v-show="notEnough" v-bind:isenough="notEnough"></layer-coin>
     </div>
 </div>
 
@@ -32,7 +44,7 @@
 <script charset="utf-8" src="//s.thsi.cn/cb?js/m/common/;basic.js;user.js;bridge.js;js/liejin/common/m/;user.min.js;stat_v1.js&170608"></script>
 <!-- <script charset="utf-8" src="//s.thsi.cn/cb?js/liejin/common/tools/;statevent.min.js;js/liejin/project/m/kaihu/dist/;selectbank.min.js"></script> -->
 <script charset="utf-8" src="//s.thsi.cn/cb?js/liejin/common/tools/;statevent.min.js"></script>
-<script charset="utf-8" src="../dist/homepage.js"></script>
+<script charset="utf-8" src="../dist/time.js"></script>
 
 </body>
 

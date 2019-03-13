@@ -4,7 +4,7 @@ const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 module.exports = {
     entry: {
-        homepage: path.resolve(__dirname, 'src/homepage.js')
+        time: path.resolve(__dirname, 'src/time.js')
     }, //入口文件
     output: {
         path: path.resolve(__dirname),
