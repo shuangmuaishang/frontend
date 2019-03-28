@@ -1,0 +1,17 @@
+[
+    { "keys": ["ctrl+alt+shift+a"], "command": "alignment" },
+    { "keys": ["ctrl+d"], "command": "run_macro_file", "args": {"file": "res://Packages/Default/Delete Line.sublime-macro"} },
+    { "keys": ["ctrl+alt+l"], "command": "reindent" },
+    { "keys": ["f3"], "command": "open_in_browser" },
+    //chorme
+     {
+        "keys": ["f2"],
+        "command": "side_bar_files_open_with",
+        "args": {
+            "paths": [],
+            "application": "C:\\Users\\viruser.v-desktop\\AppData\\Local\\Google\\Chrome\\Application\\chrome.exe",
+            "extensions": ".*"
+        }
+    },
+    { "keys": ["ctrl+alt+l"], "command": "htmlprettify"}
+]

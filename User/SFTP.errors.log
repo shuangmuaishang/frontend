@@ -1,0 +1,100 @@
+2015-04-30 11:18:38
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 322, in handle_get_dirs
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 324, in lcd
+SFTP.sftp.errors.NotFoundError: Folder not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 15, in run_with_except_hook
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 113, in handler
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 332, in run
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 480, in do_operation
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 34, in handler
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 354, in get
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 328, in handle_get_dirs
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 324, in lcd
+SFTP.sftp.errors.NotFoundError: Folder not found
+2016-05-10 19:03:53
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 355, in handle_get_dirs
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 380, in lcd
+SFTP.sftp.errors.NotFoundError: Folder not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 16, in run_with_except_hook
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 119, in handler
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 355, in run
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 510, in do_operation
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 47, in handler
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 410, in get
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 361, in handle_get_dirs
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 380, in lcd
+SFTP.sftp.errors.NotFoundError: Folder not found
+2016-07-11 13:04:49
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 355, in handle_get_dirs
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 380, in lcd
+SFTP.sftp.errors.NotFoundError: Folder not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 16, in run_with_except_hook
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 119, in handler
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 355, in run
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 510, in do_operation
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 47, in handler
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 410, in get
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 361, in handle_get_dirs
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 380, in lcd
+SFTP.sftp.errors.NotFoundError: Folder not found
+2016-07-20 11:48:13
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 16, in run_with_except_hook
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 1947, in run
+PermissionError: [WinError 5] 拒绝访问。: 'D:\\新建文件夹\\htdocs\\liejin_kaihu'
+2016-08-08 14:22:15
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 16, in run_with_except_hook
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 2057, in run
+  File "./python3.3/shutil.py", line 478, in rmtree
+  File "./python3.3/shutil.py", line 377, in _rmtree_unsafe
+  File "./python3.3/shutil.py", line 375, in _rmtree_unsafe
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'D:\\新建文件夹\\htdocs\\comment\\signcode\\'
+2016-08-10 15:34:18
+Traceback (most recent call last):
+  File "D:\新建文件夹\Sublime Text Build 3059\sublime_plugin.py", line 551, in run_
+    return self.run(**args)
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 1426, in run
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/views.py", line 2, in get_view_by_group_index
+IndexError: list index out of range
+2017-01-04 17:19:43
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 355, in handle_get_dirs
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 380, in lcd
+SFTP.sftp.errors.NotFoundError: Folder not found
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 16, in run_with_except_hook
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 119, in handler
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 355, in run
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 510, in do_operation
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 47, in handler
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 410, in get
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/file_transfer.py", line 361, in handle_get_dirs
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/sftp_transport.py", line 380, in lcd
+SFTP.sftp.errors.NotFoundError: Folder not found
+2017-04-01 18:08:37
+Traceback (most recent call last):
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/threads.py", line 16, in run_with_except_hook
+  File "/Users/wbond/Library/Application Support/Sublime Text 3/Packages/SFTP/sftp/commands.py", line 2057, in run
+  File "./python3.3/shutil.py", line 478, in rmtree
+  File "./python3.3/shutil.py", line 377, in _rmtree_unsafe
+  File "./python3.3/shutil.py", line 375, in _rmtree_unsafe
+PermissionError: [WinError 32] 另一个程序正在使用此文件，进程无法访问。: 'D:\\新建文件夹\\htdocs\\liejin_admin\\applications\\models\\Chat\\FWords\\'

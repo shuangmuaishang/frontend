@@ -1,0 +1,8 @@
+{
+    "scope": "source.json",
+
+    "completions":
+    [
+        {"trigger": "trigger\tsublime-completions", "contents": "{\"trigger\": \"${1:\\$key}\", \"contents\": \"${2:\\$value}\"}"}
+    ]
+}

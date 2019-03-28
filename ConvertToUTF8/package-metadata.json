@@ -1,0 +1,1 @@
+{"dependencies": [], "url": "https://github.com/seanliang/ConvertToUTF8", "description": "A Sublime Text 2 & 3 plugin for editing and saving files encoded in GBK, BIG5, EUC-KR, EUC-JP, Shift_JIS, etc.", "version": "2016.07.10.16.19.14", "platforms": ["*"], "sublime_text": "*"}

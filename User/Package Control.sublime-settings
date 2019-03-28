@@ -1,0 +1,37 @@
+{
+	"bootstrapped": true,
+	"in_process_packages":
+	[
+	],
+	"installed_packages":
+	[
+		"Alignment",
+		"ChannelRepositoryTools",
+		"Compare Side-By-Side",
+		"ConvertToUTF8",
+		"DocBlockr",
+		"HTML Minifier",
+		"IMESupport",
+		"Light-Completions",
+		"Package Control",
+		"SFTP",
+		"soda-theme",
+		"sublime_text_alternative_autocompletion",
+		"SublimeLinter",
+		"SublimeLinter-csslint",
+		"SublimeLinter-jshint",
+		"Theme - Soda",
+		"Yaf-Completions"
+	],
+	"repositories":
+	[
+		"https://github.com/SublimeLinter/SublimeLinter3",
+		"https://github.com/SublimeLinter/SublimeLinter-phpcs",
+		"https://github.com/seanliang/ConvertToUTF8",
+		"https://github.com/buymeasoda/soda-theme/",
+		"https://github.com/atombender/sublime_text_alternative_autocompletion.git",
+		"https://github.com/NoxArt/SublimeText2-FTPSync.git",
+		"https://github.com/huaxiaolong/Light-Completions",
+		"https://github.com/huaxiaolong/Yaf-Completions/tree/1.0.1"
+	]
+}
